@@ -6,42 +6,44 @@ import Benefits from '@/scenes/benefits';
 import OurClasses from '@/scenes/ourClasses';
 import ContactUs from './scenes/contactUs';
 import Footer from '@/scenes/footer';
-
-
+import { I18nextProvider } from 'react-i18next';
+import i18n from './i18n/118n';
 
 
 function App() {
   const [selectedPage, setSelectedPage] = useState<SelectedPage>(SelectedPage.Home);
-  const [isTopOfPage, setIsTopOfPage ] = useState<boolean>(true);
+  const [isTopOfPage, setIsTopOfPage] = useState<boolean>(true);
 
-  useEffect(()=>{ 
+  useEffect(() => {
     const handleScroll = () => {
-      if(window.scrollY === 0){
+      if (window.scrollY === 0) {
         setIsTopOfPage(true);
         setSelectedPage(SelectedPage.Home);
       }
-      if(window.scrollY !==0){
+      if (window.scrollY !== 0) {
         setIsTopOfPage(false);
       }
     };
-      window.addEventListener("scroll",handleScroll);
-      return ()=> window.removeEventListener("scroll", handleScroll);
-    
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+
   }, []);
   return (
-    <div className='app bg-gray-20' >
-      <Navbar 
-      isTopOfPage = {isTopOfPage}
-      selectedPage={selectedPage}
-        setSelectedPage={setSelectedPage} />
+    <I18nextProvider i18n={i18n}>
+      <div className='app bg-gray-20' >
+        <Navbar
+          isTopOfPage={isTopOfPage}
+          selectedPage={selectedPage}
+          setSelectedPage={setSelectedPage} />
 
-      <Home setSelectedPage={setSelectedPage} />
-      <Benefits setSelectedPage={setSelectedPage} />
-      <OurClasses setSelectedPage={setSelectedPage} />
-      <ContactUs setSelectedPage={setSelectedPage} />
-      <Footer />
- 
-    </div>
+        <Home setSelectedPage={setSelectedPage} />
+        <Benefits setSelectedPage={setSelectedPage} />
+        <OurClasses setSelectedPage={setSelectedPage} />
+        <ContactUs setSelectedPage={setSelectedPage} />
+        <Footer />
+
+      </div>
+    </I18nextProvider>
   )
 }
 

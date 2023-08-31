@@ -8,6 +8,7 @@ import image6 from '@/assets/image6.png';
 import { motion } from 'framer-motion';
 import HText from '@/shared/HText';
 import Class from './Class';
+import { useTranslation } from 'react-i18next';
 
 
 const classes: Array<ClassType> = [
@@ -48,6 +49,7 @@ type Props = {
 }
 
 const OurClasses = ({ setSelectedPage }: Props) => {
+  const { t }  = useTranslation(); 
   return (
     <section id="ourclasses" className="w-full bg-primary-100 py-40">
       <motion.div
@@ -65,12 +67,8 @@ const OurClasses = ({ setSelectedPage }: Props) => {
           }}
         >
           <div className="md:w-3/5">
-            <HText>OUR CLASSES</HText>
-            <p className="py-5">
-              Fringilla a sed at suspendisse ut enim volutpat. Rhoncus vel est
-              tellus quam porttitor. Mauris velit euismod elementum arcu neque
-              facilisi. Amet semper tortor facilisis metus nibh. Rhoncus sit
-              enim mattis odio in risus nunc.
+            <HText>{t("class.title")}</HText>
+            <p className="py-5">{t('class.body')}
             </p>
           </div>
         </motion.div>

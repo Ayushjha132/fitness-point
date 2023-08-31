@@ -9,6 +9,7 @@ import {
 import { motion } from "framer-motion";
 import BenefitsPageGraphic from "@/assets/BenefitsPageGraphic.png";
 import Benefit from "./Benefit";
+import { useTranslation } from "react-i18next";
 
 const benefits: Array<BenefitType> = [
     {
@@ -43,6 +44,7 @@ type Props = {
 };
 
 const Benefits = ({ setSelectedPage }: Props) => {
+    const { t } = useTranslation();
     return (
         <section id="benefits" className="mx-auto min-h-full w-5/6 py-20">
             <motion.div
@@ -60,11 +62,9 @@ const Benefits = ({ setSelectedPage }: Props) => {
                         visible: { opacity: 1, x: 0 },
                     }}
                 >
-                    <HText>MORE THAN JUST GYM.</HText>
+                    <HText>{t('benefit.header')}</HText>
                     <p className="my-5 text-sm">
-                        We provide world class fitness equipment, trainers and classes to
-                        get you to your ultimate fitness goals with ease. We provide true
-                        care into each and every member.
+                    {t('benefit.body')}
                     </p>
                 </motion.div>
 
@@ -112,7 +112,7 @@ const Benefits = ({ setSelectedPage }: Props) => {
                                     }}
                                 >
                                     <HText>
-                                        MILLIONS OF HAPPY MEMBERS GETTING{" "}
+                                    {t('benefit.body.title')}{" "}
                                         <span className="text-primary-500">FIT</span>
                                     </HText>
                                 </motion.div>
@@ -131,18 +131,10 @@ const Benefits = ({ setSelectedPage }: Props) => {
                             }}
                         >
                             <p className="my-5">
-                                Nascetur aenean massa auctor tincidunt. Iaculis potenti amet
-                                egestas ultrices consectetur adipiscing ultricies enim. Pulvinar
-                                fames vitae vitae quis. Quis amet vulputate tincidunt at in
-                                nulla nec. Consequat sed facilisis dui sit egestas ultrices
-                                tellus. Ullamcorper arcu id pretium sapien proin integer nisl.
-                                Felis orci diam odio.
+                            {t('benefit.body.para1')}
                             </p>
                             <p className="mb-5">
-                                Fringilla a sed at suspendisse ut enim volutpat. Rhoncus vel est
-                                tellus quam porttitor. Mauris velit euismod elementum arcu neque
-                                facilisi. Amet semper tortor facilisis metus nibh. Rhoncus sit
-                                enim mattis odio in risus nunc.
+                            {t('benefit.body.para2')}
                             </p>
                         </motion.div>
 
@@ -150,7 +142,7 @@ const Benefits = ({ setSelectedPage }: Props) => {
                         <div className="relative mt-16">
                             <div className="before:absolute before:-bottom-20 before:right-40 before:z-[-1] before:content-sparkles">
                                 <ActionButton setSelectedPage={setSelectedPage}>
-                                    Join Now
+                                    {t('home.join')}
                                 </ActionButton>
                             </div>
                         </div>

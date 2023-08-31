@@ -1,0 +1,53 @@
+{
+    "nav.home": "Home",
+    "nav.benefit": "Benefits",
+    "nav.class": "Our Classes",
+    "nav.contact": "Contact Us",
+    "nav.sign": "Sign In",
+    "nav.join": "Become a Member",
+
+    "home.intro-message": "Unrivaled Gym. Unparalleled Training Fitness Classes. World Class Studios to get the Body Shapes That you Dream of.. Get Your Dream Body Now.",
+    "home.learn-more": "Learn More",
+    "home.join": "Join Now",
+
+    "benefit.header": "MORE THAN JUST GYM",
+    "benefit.body": "We provide world class fitness equipment, trainers and classes to get you to your ultimate fitness goals with ease. We provide true care into each and every member.",
+    
+    "benefit.card1.title": "State of the Art Facilities",
+    "benefit.card1.body": "Neque adipiscing amet amet enim. Feugiat dolor enim fermentum in a in lectus pellentesque. Ullamcorper et.",
+    "benefit.learn-more": "Learn More",
+
+    "benefit.card2.title": "100's of Diverse Classes",
+    "benefit.card2.body": "Eu ipsum id egestas risus tempus enim semper felis quis. Nec consectetur ac venenatis facilisi est. Eget ac turpis id.",
+    
+    "benefit.card3.title": "Expert and Pro Trainers",
+    "benefit.card3.body": "Fusce vestibulum aliquam ut cras. Nisl lectus egestas sapien nisl. Lacus at mi sit pellentesque. Congue parturient.",
+
+    "benefit.body.title": "MILLIONS OF HAPPY MEMBERS GETTING",
+    "benefit.body.para1": "Nascetur aenean massa auctor tincidunt. Iaculis potenti amet egestas ultrices consectetur adipiscing ultricies enim. Pulvinar fames vitae vitae quis. Quis amet vulputate tincidunt at in nulla nec. Consequat sed facilisis dui sit egestas ultrices tellus. Ullamcorper arcu id pretium sapien proin integer nisl. Felis orci diam odio.",
+    "benefit.body.para2": "Fringilla a sed at suspendisse ut enim volutpat. Rhoncus vel est tellus quam porttitor. Mauris velit euismod elementum arcu neque facilisi. Amet semper tortor facilisis metus nibh. Rhoncus sit enim mattis odio in risus nunc",
+
+    "class.title": "OUR CLASSES",
+    "class.body": "Fringilla a sed at suspendisse ut enim volutpat. Rhoncus vel est tellus quam porttitor. Mauris velit euismod elementum arcu neque facilisi. Amet semper tortor facilisis metus nibh. Rhoncus sit enim mattis odio in risus nunc", 
+
+    "contact.title1" : "JOIN NOW",
+    "contact.title2" : "JOIN NOW TO GET IN SHAPE",
+    "contact.body" : "Congue adipiscing risus commodo placerat. Tellus et in feugiat nisl sapien vel rhoncus. Placerat at in enim pellentesque. Nulla adipiscing leo egestas nisi elit risus sit. Nunc cursus sagittis",
+    "name": "NAME",
+    "email": "EMAIL",
+    "message": "MESSAGE",
+    "submit": "SUBMIT",
+
+    "footer.body": "Lorem vitae ut augue auctor faucibus eget eget ut libero. Elementum purus et arcu massa dictum condimentum. Augue scelerisque iaculis orci ut habitant laoreet. Iaculis tristique.", 
+    "copyright" : "© Evogym All Rights Reserved.", 
+
+    "footer-link": "Link", 
+    "footer-contact": "Contact Us", 
+    "footer-elements": "Massa orci senecutes",
+    "footer-address1": "EVOGYM",
+    "footer-address2": "India Gate, New Delhi",
+    "footer-address3": "Delhi, India"
+    
+
+
+}

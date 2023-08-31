@@ -8,6 +8,7 @@ import SponsorForbes from "@/assets/SponsorForbes.png";
 import SponsorFortune from "@/assets/SponsorFortune.png";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 type Props = {
     setSelectedPage: (value: SelectedPage) => void;
@@ -15,7 +16,7 @@ type Props = {
 
 const Home = ({ setSelectedPage }: Props) => {
     const isAboveMediumScreens = useMediaQuery("(min-width:1060px)");
-
+    const { t } = useTranslation();
     return (
         <section id="home" className="gap-16 bg-gray-20 py-10 md:h-full md:pb-0">
             {/* IMAGE AND MAIN HEADER */}
@@ -44,9 +45,7 @@ const Home = ({ setSelectedPage }: Props) => {
                         </div>
 
                         <p className="mt-8 text-sm">
-                            Unrivaled Gym. Unparalleled Training Fitness Classes. World Class
-                            Studios to get the Body Shapes That you Dream of.. Get Your Dream
-                            Body Now.
+                            {t('home.intro-message')}
                         </p>
                     </motion.div>
 
@@ -63,14 +62,14 @@ const Home = ({ setSelectedPage }: Props) => {
                         }}
                     >
                         <ActionButton setSelectedPage={setSelectedPage}>
-                            Join Now
+                            {t('home.join')}
                         </ActionButton>
                         <AnchorLink
                             className="text-sm font-bold text-primary-500 underline hover:text-secondary-500"
                             onClick={() => setSelectedPage(SelectedPage.ContactUs)}
                             href={`#${SelectedPage.ContactUs}`}
                         >
-                            <p>Learn More</p>
+                            <p>{t('home.learn-more')}</p>
                         </AnchorLink>
                     </motion.div>
                 </div>

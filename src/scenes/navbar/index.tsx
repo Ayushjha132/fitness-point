@@ -5,6 +5,9 @@ import Link from "./Link";
 import { SelectedPage } from "@/shared/types";
 import useMediaQuery from "@/hooks/useMediaQuery";
 import ActionButton from "@/shared/ActionButton";
+import { LanguageIcon } from "@heroicons/react/24/outline";
+import { useTranslation } from "react-i18next";
+import i18n from "@/i18n/118n";
 
 type Props = {
     isTopOfPage: boolean;
@@ -17,6 +20,17 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
     const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false);
     const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
     const navbarBackground = isTopOfPage ? "" : "bg-primary-100 drop-shadow";
+
+    //language converter
+    const { t } = useTranslation();
+    const [changeLanguage, setChangeLanguage] = useState('en'); 
+    // changeLanguage is pre defined type in i18n and have to use this only. 
+    const toggleLanguage = () => {
+        const newLanguage = changeLanguage === 'en' ? 'hi' : 'en';
+        setChangeLanguage(newLanguage);
+        i18n.changeLanguage(newLanguage);
+    };
+
 
     return (
         <nav>
@@ -33,40 +47,57 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
                             <div className={`${flexBetween} w-full`}>
                                 <div className={`${flexBetween} gap-8 text-sm`}>
                                     <Link
-                                        page="Home"
+                                        page={t('nav.home')}
                                         selectedPage={selectedPage}
                                         setSelectedPage={setSelectedPage}
                                     />
                                     <Link
-                                        page="Benefits"
+                                        page={t('nav.benefit')}
                                         selectedPage={selectedPage}
                                         setSelectedPage={setSelectedPage}
                                     />
                                     <Link
-                                        page="Our Classes"
+                                        page={t('nav.class')}
                                         selectedPage={selectedPage}
                                         setSelectedPage={setSelectedPage}
                                     />
                                     <Link
-                                        page="Contact Us"
+                                        page={t('nav.contact')}
                                         selectedPage={selectedPage}
                                         setSelectedPage={setSelectedPage}
                                     />
                                 </div>
+
                                 <div className={`${flexBetween} gap-8`}>
-                                    <p>Sign In</p>
+                                    <button
+                                        onClick={toggleLanguage}
+                                        className="rounded-full hover:bg-secondary-500 p-2 cursor-pointer">
+                                        <LanguageIcon className="h-6 w-6" />
+                                    </button>
+
+                                    <p> {t('nav.sign')} </p>
                                     <ActionButton setSelectedPage={setSelectedPage}>
-                                        Become a Member
+                                        {t('nav.join')}
                                     </ActionButton>
                                 </div>
                             </div>
                         ) : (
-                            <button
-                                className="rounded-full bg-secondary-500 p-2"
-                                onClick={() => setIsMenuToggled(!isMenuToggled)}
-                            >
-                                <Bars3Icon className="h-6 w-6 text-white" />
-                            </button>
+                            <div>
+                                {/* internationazation */}
+                                <button
+                                    onClick={changeLanguage}
+                                    className="mr-4 rounded-full hover:bg-secondary-500 p-2">
+                                    <LanguageIcon className="h-6 w-6" />
+                                </button>
+
+
+                                <button
+                                    className="rounded-full bg-secondary-500 p-2"
+                                    onClick={() => setIsMenuToggled(!isMenuToggled)}
+                                >
+                                    <Bars3Icon className="h-6 w-6 text-white" />
+                                </button>
+                            </div>
                         )}
                     </div>
                 </div>

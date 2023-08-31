@@ -3,8 +3,7 @@ import ContactUsPageGraphic from "@/assets/ContactUsPageGraphic.png"
 import { motion } from "framer-motion";
 import HText from "@/shared/HText";
 import { useForm } from "react-hook-form";
-
-
+import { useTranslation } from "react-i18next";
 
 type Props = {
   setSelectedPage: (value: SelectedPage) => void
@@ -27,6 +26,8 @@ const ContactUs = ({ setSelectedPage }: Props) => {
     }
 
   }
+
+  const { t } = useTranslation();
   return (
     <section id="contactus" className="mx-auto w-5/6 pt-24 pb-32">
       <motion.div onViewportEnter={() => setSelectedPage(SelectedPage.ContactUs)}>
@@ -42,12 +43,10 @@ const ContactUs = ({ setSelectedPage }: Props) => {
           }}
         >
           <HText>
-            <span className="text-primary-500">JOIN NOW</span> TO GET IN SHAPE
+            <span className="text-primary-500">{t('contact.title1')}</span> {t('contact.title2')}
           </HText>
           <p className="my-5">
-            Congue adipiscing risus commodo placerat. Tellus et in feugiat nisl
-            sapien vel rhoncus. Placerat at in enim pellentesque. Nulla
-            adipiscing leo egestas nisi elit risus sit. Nunc cursus sagittis.
+          {t('contact.body')}
           </p>
         </motion.div>
 
@@ -68,7 +67,7 @@ const ContactUs = ({ setSelectedPage }: Props) => {
               action="https://formsubmit.co/d2beae667fc85f6ba436c95ef43692ea"
               method="POST"
             >
-              <input className={inputStyles} type="text" placeholder="NAME" {...register("name", {
+              <input className={inputStyles} type="text" placeholder={t('name')} {...register("name", {
                 required: true,
                 maxLength: 100,
 
@@ -82,7 +81,7 @@ const ContactUs = ({ setSelectedPage }: Props) => {
                   </p>
                 )}
 
-              <input className={inputStyles} type="text" placeholder="EMAIL" {...register("email", {
+              <input className={inputStyles} type="text" placeholder={t('email')} {...register("email", {
                 required: true,
                 pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
 
@@ -96,7 +95,7 @@ const ContactUs = ({ setSelectedPage }: Props) => {
                   </p>
                 )}
 
-              <textarea className={inputStyles} rows={4} cols={40} placeholder="MESSAGE" {...register("message", {
+              <textarea className={inputStyles} rows={4} cols={40} placeholder={t('message')} {...register("message", {
                 required: true,
                 maxLength: 2000,
 
@@ -111,7 +110,7 @@ const ContactUs = ({ setSelectedPage }: Props) => {
                 )}
 
               <button className="mt-5 rounded-lg bg-secondary-500 px-20 py-3 transition duration-500 hover:text-white">
-                SUBMIT
+              {t('submit')}
               </button>
             </form>
           </motion.div>
