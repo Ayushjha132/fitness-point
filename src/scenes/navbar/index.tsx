@@ -23,9 +23,9 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
 
     //language converter
     const { t } = useTranslation();
-    const [changeLanguage, setChangeLanguage] = useState('en'); 
-    // changeLanguage is pre defined type in i18n and have to use this only. 
-    const toggleLanguage = () => {
+    const [changeLanguage, setChangeLanguage] = useState<string>('en');
+
+    const toggleLanguage: React.MouseEventHandler<HTMLButtonElement> = () => {
         const newLanguage = changeLanguage === 'en' ? 'hi' : 'en';
         setChangeLanguage(newLanguage);
         i18n.changeLanguage(newLanguage);
@@ -85,7 +85,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
                             <div>
                                 {/* internationazation */}
                                 <button
-                                    onClick={changeLanguage}
+                                    onClick={toggleLanguage}
                                     className="mr-4 rounded-full hover:bg-secondary-500 p-2">
                                     <LanguageIcon className="h-6 w-6" />
                                 </button>
@@ -116,22 +116,22 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
                     {/* MENU ITEMS */}
                     <div className="ml-[33%] flex flex-col gap-10 text-2xl">
                         <Link
-                            page="Home"
+                            page={t('nav.home')}
                             selectedPage={selectedPage}
                             setSelectedPage={setSelectedPage}
                         />
                         <Link
-                            page="Benefits"
+                            page={t('nav.benefit')}
                             selectedPage={selectedPage}
                             setSelectedPage={setSelectedPage}
                         />
                         <Link
-                            page="Our Classes"
+                            page={t('nav.class')}
                             selectedPage={selectedPage}
                             setSelectedPage={setSelectedPage}
                         />
                         <Link
-                            page="Contact Us"
+                            page={t('nav.contact')}
                             selectedPage={selectedPage}
                             setSelectedPage={setSelectedPage}
                         />
