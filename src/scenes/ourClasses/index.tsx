@@ -78,7 +78,7 @@ const OurClasses = ({ setSelectedPage }: Props) => {
               <Class
                 key={`${item.name}-${index}`}
                 name={t(item.name)}
-                description={t(item.description)}
+                description={t(item.description!)}
                 image={item.image} />
             ))}
           </ul>
