@@ -14,21 +14,18 @@ import { useTranslation } from "react-i18next";
 const benefits: Array<BenefitType> = [
     {
         icon: <HomeModernIcon className="h-6 w-6" />,
-        title: "State of the Art Facilities",
-        description:
-            "Neque adipiscing amet amet enim. Feugiat dolor enim fermentum in a in lectus pellentesque. Ullamcorper et.",
+        title: "benefit.card1.title",
+        description:"benefit.card1.body",
     },
     {
         icon: <UserGroupIcon className="h-6 w-6" />,
-        title: "100's of Diverse Classes",
-        description:
-            "Eu ipsum id egestas risus tempus enim semper felis quis. Nec consectetur ac venenatis facilisi est. Eget ac turpis id.",
+        title: "benefit.card2.title",
+        description:"benefit.card2.body",
     },
     {
         icon: <AcademicCapIcon className="h-6 w-6" />,
-        title: "Expert and Pro Trainers",
-        description:
-            "Fusce vestibulum aliquam ut cras. Nisl lectus egestas sapien nisl. Lacus at mi sit pellentesque. Congue parturient.",
+        title: "benefit.card3.title",
+        description:"benefit.card3.body",
     },
 ];
 
@@ -64,7 +61,7 @@ const Benefits = ({ setSelectedPage }: Props) => {
                 >
                     <HText>{t('benefit.header')}</HText>
                     <p className="my-5 text-sm">
-                    {t('benefit.body')}
+                        {t('benefit.body')}
                     </p>
                 </motion.div>
 
@@ -80,8 +77,8 @@ const Benefits = ({ setSelectedPage }: Props) => {
                         <Benefit
                             key={benefit.title}
                             icon={benefit.icon}
-                            title={benefit.title}
-                            description={benefit.description}
+                            title={t(benefit.title)}
+                            description={t(benefit.description)}
                             setSelectedPage={setSelectedPage}
                         />
                     ))}
@@ -112,13 +109,13 @@ const Benefits = ({ setSelectedPage }: Props) => {
                                     }}
                                 >
                                     <HText>
-                                    {t('benefit.body.title')}{" "}
+                                        {t('benefit.body.title')}{" "}
                                         <span className="text-primary-500">FIT</span>
                                     </HText>
                                 </motion.div>
                             </div>
                         </div>
- 
+
                         {/* DESCRIPT */}
                         <motion.div
                             initial="hidden"
@@ -131,10 +128,10 @@ const Benefits = ({ setSelectedPage }: Props) => {
                             }}
                         >
                             <p className="my-5">
-                            {t('benefit.body.para1')}
+                                {t('benefit.body.para1')}
                             </p>
                             <p className="mb-5">
-                            {t('benefit.body.para2')}
+                                {t('benefit.body.para2')}
                             </p>
                         </motion.div>
 

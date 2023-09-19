@@ -13,33 +13,33 @@ import { useTranslation } from 'react-i18next';
 
 const classes: Array<ClassType> = [
   {
-    name: "Weight Traning Classes",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    name: "class1.name",
+    description: "class1.description",
     image: image1
   },
   {
-    name: "Yoga Classes",
-    description:"",
+    name: "class2.name",
+    description: "class2.description",
     image: image2
   },
   {
-    name: "Ab Cors Classes",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    name: "class3.name",
+    description: "class3.description",
     image: image3
   },
   {
-    name: "Adventure Classes",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    name: "class4.name",
+    description: "class4.description",
     image: image4
   },
   {
-    name: "Fitness Classes",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    name: "class5.name",
+    description: "class5.description",
     image: image5
   },
   {
-    name: "Training Classes",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    name: "class6.name",
+    description: "class6.description",
     image: image6
   },
 ]
@@ -77,8 +77,8 @@ const OurClasses = ({ setSelectedPage }: Props) => {
             {classes.map((item: ClassType, index) => (
               <Class
                 key={`${item.name}-${index}`}
-                name={item.name}
-                description={item.description}
+                name={t(item.name)}
+                description={t(item.description)}
                 image={item.image} />
             ))}
           </ul>
